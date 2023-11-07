@@ -33,7 +33,6 @@ print(nouvo_dik)
 
 #6
 diks={'a':"bonjour", 'b': "annee", 'c': 21, 'd': "hello", 'e':16}
-
 for kle, val in diks.items():
     if isinstance(val, str):
         diks[kle]= "_" + val + "_"
@@ -61,14 +60,10 @@ for cle,value in liste_de_tuple:
 print(dictionnaire)
 
 #10
-def fusionner_dictionnaires(dict1, dict2):
-    fusion = {}
+dict1={"kle1":123,"kle2":"abc","kle3":[1,2,3]}
+dict2={"kle1":123,"kle2":"ghi","kle3":[4,6,9]}
+new_dick=dict1.copy()
+new_dick.update((k,v)for k,v in dict2.items()if isinstance(v,(int,str,list,set)))
+print(new_dick)
 
-    # Fusionner les clés du premier dictionnaire
-    for cle, valeur in dict1.items():
-        if cle in dict2:
-            if isinstance(valeur, int) and isinstance(dict2[cle], int):
-                fusion[cle] = valeur + dict2[cle]
-            elif isinstance(valeur, (str, list, set)) and isinstance(dict2[cle], (str, list, set)):
-                fusion[cle] = valeur + dict2[cle]
         
